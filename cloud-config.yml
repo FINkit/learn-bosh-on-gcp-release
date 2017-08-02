@@ -16,6 +16,7 @@ networks:
   - range: 10.0.0.0/24
     gateway: 10.0.0.1
     reserved: [10.0.0.2-10.0.0.9]
+    static: [10.0.0.10-10.0.0.19]
     azs:
     - z1
     - z2
@@ -23,16 +24,13 @@ networks:
     dns:
     - 8.8.8.8
     - 8.8.4.4
-    static:
-    - 10.0.0.12
-    - 10.0.0.16
-    - 10.0.0.20
     cloud_properties:
       ephemeral_external_ip: false
       network_name: bosh
       subnetwork_name: bosh-europe-west2
       tags:
       - internal
+      - no-ip
 
 compilation:
   workers: 1
