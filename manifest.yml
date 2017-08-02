@@ -1,0 +1,31 @@
+---
+name: learn-bosh-on-gcp
+
+releases:
+- name: learn-bosh-on-gcp
+  version: latest
+
+stemcells:
+- alias: default
+  os: ubuntu-trusty
+  version: latest
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000
+
+instance_groups:
+- name: learn-bosh-on-gcp
+  azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: app
+    release: learn-bosh-on-gcp
+    properties: {}
+  vm_type: g1-small
+  stemcell: default
+  networks:
+  - name: default
