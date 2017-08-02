@@ -1,5 +1,5 @@
 --- 
-final_name: learn-bosh
+final_name: learn-bosh-on-gcp
 blobstore:
   provider: s3
   options: 
