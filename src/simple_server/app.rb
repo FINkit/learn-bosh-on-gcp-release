@@ -5,9 +5,9 @@ require 'securerandom'
 server_id = SecureRandom.uuid
 
 get '/' do
-  name = 'Maria'
+  name = 'Anonymous'
   
-  "Hello, #{name} from #{server_id}"
+  "Hello, #{name} from #{server_id}\n"
 end
 
 get '/kill' do
