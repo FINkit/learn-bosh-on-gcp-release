@@ -12,4 +12,3 @@ get '/' do
   picked_server = servers.sample
   redirect picked_server
 end
-
